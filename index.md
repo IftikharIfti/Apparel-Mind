@@ -1,31 +1,35 @@
-```
+---
 title: Home
 layout: page
-```
-# Image Recognizer
+---
 
-Can classify 17 different types of clothings:<br/>
-Categories of Clothing:<br/>
-Upper Wear:
+# Apparel Mind
 
-1.T-Shirts  
-2.Shirts    
-3.Hoodies   
-4.Sweaters   
-5.Jackets   
-6.Blazers   
+An AI-powered image classification API that recognizes 17 common apparel categories.
 
-Lower Wear:   
-7.Jeans    
-8.Formal Pants   
-9.Joggers   
-10.Shorts   
+## Upload an Image:
+<input id="photo" type="file" accept="image/*">
+<button onclick="classifyImage()">Classify</button>
+<div id="results"></div>
 
-Accessories:   
-11.Sneakers   
-12.High Heels    
-13.Boots    
-14.Sandals/Flip-flops    
-15.Hats   
-16.Watches    
-17.Handbags/Purses    
+<script type="module">
+    import { Client } from "@gradio/client";
+
+    async function classifyImage() {
+        const fileInput = document.getElementById("photo").files[0];
+
+        if (!fileInput) {
+            alert("Please select an image first.");
+            return;
+        }
+
+        const exampleImage = await fileInput.arrayBuffer();
+        const client = await Client.connect("iftikharifti/clothing_classification");
+
+        const result = await client.predict("/predict", { 
+            image: new Blob([exampleImage])  
+        });
+
+        document.getElementById("results").innerText = `Prediction: ${JSON.stringify(result.data)}`;
+    }
+</script>
