@@ -1,6 +1,8 @@
 ---
 title: Home
 layout: page
+
+
 ---
 
 # Apparel Mind
