@@ -8,7 +8,10 @@ layout: page
 An AI-powered image classification API that recognizes 17 common apparel categories.
 
 ## Upload an Image:
-<input id="photo" type="file" accept="image/*">
+<input id="photo" type="file" accept="image/*" onchange="previewImage(event)">
+<br>
+<img id="preview" style="max-width: 300px; display: none; margin-top: 10px;" alt="Selected Image Preview">
+<br>
 <button onclick="classifyImage()">Classify</button>
 <div id="results"></div>
 
