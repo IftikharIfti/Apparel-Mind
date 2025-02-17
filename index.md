@@ -4,8 +4,8 @@ layout: page
 ```
 # Image Recognizer
 
-Can classify 17 different types of clothings:</br>
-Categories of Clothing:</br>
+Can classify 17 different types of clothings:<br/>
+Categories of Clothing:<br/>
 Upper Wear:
 1.T-Shirts
 2.Shirts
