@@ -45,8 +45,6 @@ An AI-powered image classification API that recognizes 17 common apparel categor
             console.error("Error calling API:", error);
             document.getElementById("results").innerText = "Error processing the image.";
         }
-    }
-
-    // Ensure function is globally available
+    } 
     window.classifyImage = classifyImage;
 </script>
