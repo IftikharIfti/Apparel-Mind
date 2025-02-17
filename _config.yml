@@ -1,8 +1,33 @@
-remote_theme: forty-jekyll-theme@master
-plugins:
-- jekyll-remote-theme
+# Site settings
 title: Apparel Mind
-description: An image classification API that classifies 17 different most commonly used apparels
+description: An image classification API that classifies 17 different, commonly used apparels.
 
+# Author settings
 author:
   name: Iftikhar Jaman Ifti
+
+# Theme settings
+remote_theme: mmistakes/minimal-mistakes@latest
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Minimal Mistakes settings
+# For detailed configuration options, refer to:
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/
+minimal_mistakes_skin: "default"
+header:
+  image: "/assets/images/header.jpg" # Path to your header image
+footer:
+  links:
+    - title: "GitHub"
+      url: "https://github.com/iftikharifti"
+    - title: "LinkedIn"
+      url: "https://www.linkedin.com/in/iftikharifti/"
