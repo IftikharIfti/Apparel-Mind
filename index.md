@@ -3,7 +3,7 @@ title: Home
 layout: page
 ---
 
-# Apparel Mind  
+# Apparel Mind
 
 An AI-powered image classification API that recognizes 17 common apparel categories.
 
@@ -16,6 +16,26 @@ An AI-powered image classification API that recognizes 17 common apparel categor
 <div id="results"></div>
 
 <script>
+    // Function to preview the selected image
+    function previewImage(event) {
+        const preview = document.getElementById('preview');
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function() {
+            preview.src = reader.result;
+            preview.style.display = 'block';
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = '';
+            preview.style.display = 'none';
+        }
+    }
+
+    // Function to classify the image using the API
     async function classifyImage() {
         const fileInput = document.getElementById("photo").files[0];
 
@@ -43,11 +63,21 @@ An AI-powered image classification API that recognizes 17 common apparel categor
             });
 
             console.log("API Response:", result);
-            document.getElementById("results").innerText = `Prediction: ${JSON.stringify(result.data)}`;
+
+            // Extract and display the primary label
+            if (result.data && result.data.length > 0 && result.data[0].label) {
+                const primaryLabel = result.data[0].label;
+                document.getElementById("results").innerText = `Prediction: ${primaryLabel}`;
+            } else {
+                document.getElementById("results").innerText = "No prediction available.";
+            }
         } catch (error) {
             console.error("Error calling API:", error);
             document.getElementById("results").innerText = "Error processing the image.";
         }
-    } 
+    }
+
+    // Expose the functions to the global scope
+    window.previewImage = previewImage;
     window.classifyImage = classifyImage;
 </script>
