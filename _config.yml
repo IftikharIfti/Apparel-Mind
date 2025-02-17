@@ -1,0 +1,8 @@
+remote_theme: forty-jekyll-theme@master
+plugins:
+- jekyll-remote-theme
+title: Apparel Mind
+description: An image classification API that classifies 17 different most commonly used apparels
+
+author:
+  name: Iftikhar Jaman Ifti
