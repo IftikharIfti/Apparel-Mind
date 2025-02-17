@@ -7,15 +7,13 @@
     3.Hoodies    
     4.Sweaters      
     5.Jackets       
-    6.Blazers          
-
+    6.Blazers              
     Lower Wear:            
     7.Jeans    
     8.Formal Pants              
     9.Joggers               
-    10.Shorts     
-
-    Accessories:          
+    10.Shorts         
+    Accessories:                      
     11.Sneakers        
     12.High Heels          
     13.Boots         
@@ -23,6 +21,8 @@
     15.Hats        
     16.Watches          
     17.Handbags/Purses  
+
+
  The website offers a way to deliver you a model for your clothing e-commerce websites automation.
  Here is the website link:
  https://iftikharifti.github.io/Apparel-Mind/         
